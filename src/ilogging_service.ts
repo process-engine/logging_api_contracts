@@ -1,13 +1,14 @@
+import {IIdentity} from '@essential-projects/iam_contracts';
+
 import {LogEntry} from './log_entry';
 import {LogLevel} from './log_level';
-
-import {IIdentity} from '@essential-projects/iam_contracts';
 
 /**
  * Contains functions for writing and retrieving content from logfiles.
  * Each logfile relates to a specific process model and correlation.
  */
 export interface ILoggingService {
+
   /**
    * Retrieves the logs for a specific process model of a given correlation.
    *
@@ -19,6 +20,7 @@ export interface ILoggingService {
    * @returns              A list of log entries.
    */
   getLogsForProcessInstance(identity: IIdentity, processModelId: string, correlationId: string, logLevel?: LogLevel): Array<LogEntry>;
+
   /**
    * Writes a log entry for a specific process model of a correlation.
    *
@@ -28,6 +30,7 @@ export interface ILoggingService {
    * @param message        The message to write into the log entry.
    */
   writeLogForProcessModel(processModelId: string, correlationId: string, logLevel: LogLevel, message: string): Promise<void>;
+
   /**
    * Writes a log entry for a specific flow node instance of a process model within a correlation.
    *
