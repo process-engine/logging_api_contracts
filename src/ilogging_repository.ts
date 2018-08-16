@@ -35,8 +35,9 @@ export interface ILoggingRepository {
    * @param processModelId The id of process model for which to create a log entry.
    * @param logLevel       The loglevel to use (debug, info, warning, error).
    * @param message        The message to write into the log entry.
+   * @param timestamp      Optional: The timestamp to use for the log entry. Defaults to "now".
    */
-  writeLogForProcessInstance(correlationId: string, processModelId: string, logLevel: LogLevel, message: string): Promise<void>;
+  writeLogForProcessInstance(correlationId: string, processModelId: string, logLevel: LogLevel, message: string, timestamp?: Date): Promise<void>;
 
   /**
    * Writes a log entry for a specific flow node instance of a process model within a correlation.
@@ -46,10 +47,12 @@ export interface ILoggingRepository {
    * @param flowNodeInstanceId  The id of flow node instance for which to create a log entry.
    * @param logLevel            The loglevel to use (debug, info, warning, error).
    * @param message             The message to write into the log entry.
+   * @param timestamp           Optional: The timestamp to use for the log entry. Defaults to "now".
    */
   writeLogForFlowNodeInstance(correlationId: string,
                               processModelId: string,
                               flowNodeInstanceId: string,
                               logLevel: LogLevel,
-                              message: string): Promise<void>;
+                              message: string,
+                              timestamp?: Date): Promise<void>;
 }
