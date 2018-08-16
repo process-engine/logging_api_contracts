@@ -10,6 +10,17 @@ import {LogLevel} from './log_level';
 export interface ILoggingService {
 
   /**
+   * Retrieves the logs for a specific correlation.
+   *
+   * @param identity       The identity of the requesting user.
+   * @param correlationId  The id of the correlation for which to retrieve the logs.
+   * @param logLevel       Optional: If set, only logs with a matching log level are returned.
+   *                       If not set, all logs will be returned.
+   * @returns              A list of log entries.
+   */
+  getLogsForCorrelation(identity: IIdentity, correlationId: string, logLevel?: LogLevel): Array<LogEntry>;
+
+  /**
    * Retrieves the logs for a specific process model of a given correlation.
    *
    * @param identity       The identity of the requesting user.
