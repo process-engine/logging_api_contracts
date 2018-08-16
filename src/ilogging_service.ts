@@ -40,7 +40,7 @@ export interface ILoggingService {
    * @param logLevel       The loglevel to use (debug, info, warning, error).
    * @param message        The message to write into the log entry.
    */
-  writeLogForProcessModel(correlationId: string, processModelId: string, logLevel: LogLevel, message: string): Promise<void>;
+  writeLogForProcessInstance(correlationId: string, processModelId: string, logLevel: LogLevel, message: string): Promise<void>;
 
   /**
    * Writes a log entry for a specific flow node instance of a process model within a correlation.

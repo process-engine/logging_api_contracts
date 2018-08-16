@@ -8,7 +8,7 @@ const params = {
 const paths = {
   getLogsForCorrelation: `/correlation/${params.correlationId}`,
   getLogsForProcessInstance: `/correlation/${params.correlationId}/process_model/${params.processModelId}`,
-  writeLogForProcessModel: `/correlation/${params.correlationId}/process_model/${params.processModelId}`,
+  writeLogForProcessInstance: `/correlation/${params.correlationId}/process_model/${params.processModelId}`,
   writeLogForFlowNodeInstance:
     `/correlation/${params.correlationId}/process_model/${params.processModelId}/flow_node_instance/${params.flowNodeInstanceId}`,
 };
