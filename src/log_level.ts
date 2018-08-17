@@ -1,9 +1,9 @@
 /**
- * Contains a list of possible log levels.
+ * Contains the definition of log levels.
  */
 export enum LogLevel {
-  debug = 1,
-  info = 2,
-  warn = 4,
-  error = 8,
+  debug = 'debug',
+  info = 'info',
+  warn = 'warn',
+  error = 'error',
 }

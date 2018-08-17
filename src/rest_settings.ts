@@ -14,15 +14,15 @@ const paths = {
 };
 
 /**
- * Contains the endpoints and various rest parameters used by the logging api.
+ * Contains the endpoints and various rest parameters used by the logging API.
  */
 export const restSettings = {
   /**
-   * A collection of all url parameters employed by the logging api.
+   * A collection of all URL parameters employed by the logging API.
    */
   params: params,
   /**
-   * A collection of all urls employed by the logging api.
+   * A collection of all URLs employed by the logging API.
    */
   paths: paths,
 };

@@ -5,58 +5,60 @@ import {LogLevel} from './log_level';
 
 /**
  * Contains functions for writing and retrieving content from logfiles.
- * Each logfile relates to a specific process model and correlation.
+ * Each logfile relates to a specific Process Model and Correlation.
  */
 export interface ILoggingService {
 
   /**
-   * Retrieves the logs for a specific correlation.
+   * Retrieves the logs for a specific Correlation.
    * @async
    * @param identity       The identity of the requesting user.
-   * @param correlationId  The id of the correlation for which to retrieve the logs.
-   * @param logLevel       Optional: If set, only logs with a matching log level are returned.
+   * @param correlationId  The ID of the Correlation for which to retrieve the logs.
    *                       If not set, all logs will be returned.
    * @returns              A list of log entries.
    */
-  getLogsForCorrelation(identity: IIdentity, correlationId: string, logLevel?: LogLevel): Promise<Array<LogEntry>>;
+  getLogsForCorrelation(identity: IIdentity, correlationId: string): Promise<Array<LogEntry>>;
 
   /**
-   * Retrieves the logs for a specific process model of a given correlation.
+   * Retrieves the logs for a specific Process Model of a given Correlation.
    * @async
    * @param identity       The identity of the requesting user.
-   * @param correlationId  The id of the correlation for which to retrieve the logs.
-   * @param processModelId The id of process model for which to retrieve the logs.
-   * @param logLevel       Optional: If set, only logs with a matching log level are returned.
+   * @param correlationId  The ID of the Correlation for which to retrieve the logs.
+   * @param processModelId The ID of Process Model for which to retrieve the logs.
    *                       If not set, all logs will be returned.
    * @returns              A list of log entries.
    */
-  getLogsForProcessInstance(identity: IIdentity, correlationId: string, processModelId: string, logLevel?: LogLevel): Promise<Array<LogEntry>>;
+  getLogsForProcessModel(identity: IIdentity, correlationId: string, processModelId: string): Promise<Array<LogEntry>>;
 
   /**
-   * Writes a log entry for a specific process model of a correlation.
+   * Writes a log entry for a specific Process Model of a Correlation.
    * @async
-   * @param correlationId  The id of the correlation to which the process model belongs.
-   * @param processModelId The id of process model for which to create a log entry.
-   * @param logLevel       The loglevel to use (debug, info, warning, error).
+   * @param correlationId  The ID of the Correlation to which the Process Model belongs.
+   * @param processModelId The ID of Process Model for which to create a log entry.
+   * @param logLevel       The loglevel to use.
    * @param message        The message to write into the log entry.
    * @param timestamp      Optional: The timestamp to use for the log entry. Defaults to "now".
    */
-  writeLogForProcessInstance(correlationId: string, processModelId: string, logLevel: LogLevel, message: string, timestamp?: Date): Promise<void>;
+  writeLogForProcessModel(correlationId: string,
+                          processModelId: string,
+                          logLevel: LogLevel,
+                          message: string,
+                          timestamp?: Date): Promise<void>;
 
   /**
-   * Writes a log entry for a specific flow node instance of a process model within a correlation.
+   * Writes a log entry for a specific Flow Node of a Process Model within a Correlation.
    * @async
-   * @param correlationId       The id of the correlation to which the process model belongs.
-   * @param processModelId      The id of process model to which the flow node instance belongs.
-   * @param flowNodeInstanceId  The id of flow node instance for which to create a log entry.
-   * @param logLevel            The loglevel to use (debug, info, warning, error).
-   * @param message             The message to write into the log entry.
-   * @param timestamp           Optional: The timestamp to use for the log entry. Defaults to "now".
+   * @param correlationId  The ID of the Correlation to which the Process Model belongs.
+   * @param processModelId The ID of Process Model to which the Flow Node belongs.
+   * @param flowNodeId     The ID of Flow Node for which to create a log entry.
+   * @param logLevel       The loglevel to use.
+   * @param message        The message to write into the log entry.
+   * @param timestamp      Optional: The timestamp to use for the log entry. Defaults to "now".
    */
-  writeLogForFlowNodeInstance(correlationId: string,
-                              processModelId: string,
-                              flowNodeInstanceId: string,
-                              logLevel: LogLevel,
-                              message: string,
-                              timestamp?: Date): Promise<void>;
+  writeLogForFlowNode(correlationId: string,
+                      processModelId: string,
+                      flowNodeId: string,
+                      logLevel: LogLevel,
+                      message: string,
+                      timestamp?: Date): Promise<void>;
 }
