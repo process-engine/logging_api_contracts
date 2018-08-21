@@ -7,7 +7,7 @@ import {LogLevel} from './log_level';
  * Contains functions for writing and retrieving content from logfiles.
  * Each logfile relates to a specific Process Model and Correlation.
  */
-export interface ILoggingService {
+export interface ILoggingApiService {
 
   /**
    * Retrieves the logs for a specific Correlation.
