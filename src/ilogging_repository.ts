@@ -44,15 +44,17 @@ export interface ILoggingRepository {
   /**
    * Writes a log entry for a specific Flow Node of a Process Model within a Correlation.
    * @async
-   * @param correlationId  The ID of the Correlation to which the Process Model belongs.
-   * @param processModelId The ID of Process Model to which the Flow Node belongs.
-   * @param flowNodeId     The ID of Flow Node for which to create a log entry.
-   * @param logLevel       The loglevel to use.
-   * @param message        The message to write into the log entry.
-   * @param timestamp      Optional: The timestamp to use for the log entry. Defaults to "now".
+   * @param correlationId      The ID of the Correlation to which the Process Model belongs.
+   * @param processModelId     The ID of Process Model to which the Flow Node belongs.
+   * @param flowNodeInstanceId The instance ID of Flow Node for which to create a log entry.
+   * @param flowNodeId         The ID of Flow Node for which to create a log entry.
+   * @param logLevel           The loglevel to use.
+   * @param message            The message to write into the log entry.
+   * @param timestamp          Optional: The timestamp to use for the log entry. Defaults to "now".
    */
   writeLogForFlowNode(correlationId: string,
                       processModelId: string,
+                      flowNodeInstanceId: string,
                       flowNodeId: string,
                       logLevel: LogLevel,
                       message: string,
