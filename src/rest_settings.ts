@@ -2,14 +2,11 @@
 const params = {
   processModelId: ':process_model_id',
   correlationId: ':correlation_id',
-  flowNodeId: ':flow_node_id',
 };
 
 const paths = {
-  getLogsForCorrelation: `/correlation/${params.correlationId}`,
-  getLogsForProcessModel: `/correlation/${params.correlationId}/process_model/${params.processModelId}`,
-  writeLogForProcessModel: `/correlation/${params.correlationId}/process_model/${params.processModelId}`,
-  writeLogForFlowNode: `/correlation/${params.correlationId}/process_model/${params.processModelId}/flow_node/${params.flowNodeId}`,
+  getLogForCorrelation: `/correlation/${params.correlationId}`,
+  getLogForProcessModel: `/correlation/${params.correlationId}/process_model/${params.processModelId}`,
 };
 
 /**
