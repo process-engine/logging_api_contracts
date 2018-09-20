@@ -1,12 +1,10 @@
 // tslint:disable:typedef
 const params = {
   processModelId: ':process_model_id',
-  correlationId: ':correlation_id',
 };
 
 const paths = {
-  getLogForCorrelation: `/correlation/${params.correlationId}`,
-  getLogForProcessModel: `/correlation/${params.correlationId}/process_model/${params.processModelId}`,
+  getLogForProcessModel: `/process_model/${params.processModelId}`,
 };
 
 /**

@@ -8,19 +8,17 @@ import {LogLevel} from './log_level';
 export interface ILoggingRepository {
 
   /**
-   * Retrieves the logs for a specific ProcessModel of a given Correlation.
+   * Retrieves the logs for a specific ProcessModel.
    * @async
-   * @param correlationId  The ID of the Correlation for which to retrieve
-   *                       the logs.
    * @param processModelId The ID of ProcessModel for which to retrieve
    *                       the logs.
    *                       If not set, all logs will be returned.
    * @returns              A list of log entries.
    */
-  readLogForProcessModel(correlationId: string, processModelId: string): Promise<Array<LogEntry>>;
+  readLogForProcessModel(processModelId: string): Promise<Array<LogEntry>>;
 
   /**
-   * Writes a log entry for a specific ProcessModel of a Correlation.
+   * Writes a log entry for a specific ProcessModel.
    * @async
    * @param correlationId  The ID of the Correlation to which the
    *                       ProcessModel belongs.
