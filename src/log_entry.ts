@@ -13,6 +13,7 @@ export class LogEntry {
   public timeStamp: Date;
   public correlationId: string;
   public processModelId: string;
+  public processInstanceId: string;
   public flowNodeInstanceId?: string;
   public flowNodeId?: string;
   public logLevel: LogLevel;
