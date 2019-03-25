@@ -6,7 +6,7 @@ const params = {
 
 const paths = {
   getLogForProcessModel: `/process_model/${params.processModelId}`,
-  getLogForProcessInstance: `/process_model/${params.processInstanceId}`,
+  getLogForProcessInstance: `/process_model/${params.processModelId}/process_instance/${params.processInstanceId}`,
 };
 
 /**
