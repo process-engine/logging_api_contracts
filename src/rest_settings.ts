@@ -1,10 +1,12 @@
 // tslint:disable:typedef
 const params = {
   processModelId: ':process_model_id',
+  processInstanceId: ':process_instance_id',
 };
 
 const paths = {
   getLogForProcessModel: `/process_model/${params.processModelId}`,
+  getLogForProcessInstance: `/process_model/${params.processInstanceId}`,
 };
 
 /**

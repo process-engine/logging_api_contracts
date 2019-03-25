@@ -18,6 +18,18 @@ export interface ILoggingRepository {
   readLogForProcessModel(processModelId: string): Promise<Array<LogEntry>>;
 
   /**
+   * Retrieves the logs for a specific ProcessInstance.
+   * @async
+   * @param processModelId The ID of the ProcessModel for which to retrieve
+   *                       the logs.
+   * @async
+   * @param processModelId The ID of the ProcessInstance for which to retrieve
+   *                       the logs.
+   * @returns              A list of log entries.
+   */
+  readLogForProcessInstance(processModelId: string, processInstanceId: string): Promise<Array<LogEntry>>;
+
+  /**
    * Writes a log entry for a specific ProcessModel of a Correlation.
    * @async
    * @param correlationId     The ID of the Correlation to which the

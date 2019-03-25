@@ -21,6 +21,19 @@ export interface ILoggingApi {
   readLogForProcessModel(identity: IIdentity, processModelId: string): Promise<Array<LogEntry>>;
 
   /**
+   * Retrieves the logs for a specific ProcessModel of a given Correlation.
+   * @async
+   * @param identity          The identity of the requesting user.
+   * @param processModelId    The ID of the ProcessModel for which to retrieve
+   *                          the logs.
+   * @param processInstanceId The ID of the ProcessInstance for which to retrieve
+   *                          the logs.
+   *                          If not set, all logs will be returned.
+   * @returns                 A list of log entries.
+   */
+  readLogForProcessInstance(identity: IIdentity, processModelId: string, processInstanceId: string): Promise<Array<LogEntry>>;
+
+  /**
    * Writes a log entry for a specific ProcessModel of a Correlation.
    * @async
    * @param correlationId     The ID of the Correlation to which the
